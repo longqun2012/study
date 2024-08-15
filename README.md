@@ -20,3 +20,4 @@ git branch #查看branch
 git branch branch-name #创建branch-name branch
 git branch -d branch-name #删掉branch-name branch
 b
+git merge --no-ff -m "merge with no-ff" dev #禁用fast forword,生成一个新的提交
