@@ -9,3 +9,14 @@ git fetch origin
 git reset --hard origin/master #同步远程库
 git checkout -- file-name #撤销文件的修改
 
+git checkout -b branch-name #创建和切换到branch-name branch
+git merge branch-name #合并branch-name branch到当前branch
+git switch -c  branch-name #创建和切换到branch-name branch
+
+git switch branch-name
+git checkout branch-name 切换到到branch-name branch
+
+git branch #查看branch
+git branch branch-name #创建branch-name branch
+git branch -d branch-name #删掉branch-name branch
+
