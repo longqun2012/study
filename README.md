@@ -21,4 +21,4 @@ git branch branch-name #创建branch-name branch
 git branch -d branch-name #删掉branch-name branch
 a
 b
-
+ git log --graph --pretty=oneline --abbrev-commit
