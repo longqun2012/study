@@ -25,3 +25,9 @@ b
 
 git merge --no-ff -m "merge with no-ff" dev #禁用fast forword,生成一个新的提交
 test
+
+git tag v1.0#给当前head打上v1.0 tag
+
+git tag#查看所有标签
+git show v1.0#查看v1.0tag的具体commit
+git tag v0.8 commit-id #给commit-id这个提交打v0.9 tag
