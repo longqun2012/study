@@ -24,4 +24,4 @@ b
  git log --graph --pretty=oneline --abbrev-commit
 
 git merge --no-ff -m "merge with no-ff" dev #禁用fast forword,生成一个新的提交
-
+test
