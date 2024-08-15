@@ -19,4 +19,4 @@ git checkout branch-name 切换到到branch-name branch
 git branch #查看branch
 git branch branch-name #创建branch-name branch
 git branch -d branch-name #删掉branch-name branch
-
+a
