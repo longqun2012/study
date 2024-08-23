@@ -21,6 +21,12 @@ print(s)
 print("s")
 d={'x':1,'y':2,'z':'3'}
 s=[xx+'='+yx if isinstance(yx,str) else xx+str(yx) for xx,yx in d.items()]
+print(s)
+s=[xx+'='+yx if isinstance((xx,yx),str) else xx+str(yx) for xx,yx in d.items()]
+print(s)
+s=[xx+'='+yx if isinstance(yx,str) else xx+"="+str(yx) for xx,yx in d.items()]
+
+
 # s=[k + '=' + v for k, v in d.items()]
 print(s)
 

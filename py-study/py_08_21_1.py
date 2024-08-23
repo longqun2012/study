@@ -15,7 +15,7 @@ print(x)
 x,y=py_08_21_function.my_yd(100,200,300,60)
 print(x,y)
 
-x=py_08_21_function.my_qua(1,'a',1)
+x=py_08_21_function.my_qua(1,2,1)
 print(x)
 print(py_08_21_function.my_qua(2, 3, 1))
 if py_08_21_function.my_qua(2, 3, 1) != (-0.5, -1.0):

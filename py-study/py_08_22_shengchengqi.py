@@ -65,7 +65,8 @@ def triangles(max):
         a=a+1
         # while b<a:
         #     d=[1]+[1]
-a=triangles(7)
+x=int(input())
+a=triangles(x)
 while True:
     try:
         b=next(a)
@@ -74,6 +75,8 @@ while True:
         #print('asd',a.value)
         break
 
+a=range(2)
+print(a)
 # # 期待输出:
 # # [1]
 # # [1, 1]
