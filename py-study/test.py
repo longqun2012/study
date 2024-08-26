@@ -7,8 +7,7 @@ print(len(x))
 # 其中x是基数，y是指数。pow函数还可以接受一个可选的第三个参数z，
 # 表示取模（取余）操作
 
-#len
-#查看str或者列表的长度
+
 
 #split
 #Python 中的 split() 函数是一个非常实用的字符串方法，它用于将字符串分割成列表
@@ -23,4 +22,21 @@ print(len(x))
 l=['a','s','d','c']
 for i,j in enumerate(l):
     print(i,j)
-#enumerate
+#enumerate   i为下标，j为value
+
+
+#list中函数
+#append 在list末尾增加一个值 a.append('value')
+#insert 在list特定位置增加一个值 a.append(位置,'value')
+#len
+#查看str或者列表的长度
+#pop 删除list中的一个元素，
+# a.pop() 删除末尾元素
+#a.pop(1) 删除第二个元素
+
+#sort 
+# >>> a = ['c', 'b', 'a']
+# >>> a.sort()
+# >>> a
+# ['a', 'b', 'c']
+
