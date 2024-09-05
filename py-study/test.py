@@ -40,3 +40,5 @@ for i,j in enumerate(l):
 # >>> a
 # ['a', 'b', 'c']
 
+#assertEqual(a,b)
+#判断a是否等于b，如果是，返回true
