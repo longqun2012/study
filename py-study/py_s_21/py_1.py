@@ -47,3 +47,23 @@ assert get_score_in(60, 80) == ['Bart', 'Lisa'], get_score_in(60, 80)
 assert get_score_in(60, 100) == ['Bart', 'Lisa', 'Adam'], get_score_in(60, 100)
 
 print('Pass')
+
+
+def get_score_in(ta):
+    try:
+        conn =sqlite3.connect(db_file)
+        cursor =conn.cursor()
+        cursor.execute('select * from ?',(ta,))
+        a=cursor.fetchall()
+        #print (a)
+        b = [name[1] for name in a]
+        #print(b)
+        return b
+    # except Exception as a:
+    #     print(a)
+    finally:
+        cursor.close()
+        conn.close()
+# 测试:
+a=get_score_in('user') 
+print(a)
