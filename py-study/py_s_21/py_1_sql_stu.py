@@ -83,7 +83,7 @@ def print_table_curl(curl):
         cursor.close()
         conn.close()
 
-def insert_table_curl(curl):
+def commit_table_curl(curl):
     try:
         conn=sqlite3.connect(dbfile)
         cursor=conn.cursor()
@@ -143,7 +143,28 @@ print_table_curl('SELECT * FROM student s RIGHT OUTER JOIN classes c ON s.classe
 print_table_curl('SELECT * FROM student s LEFT OUTER JOIN classes c ON s.classes_id=c.id')
 
 
-insert_table_curl('INSERT INTO student(classes_id,name,gender,score) values(5,"十二","f",78)')
+commit_table_curl('INSERT INTO student(classes_id,name,gender,score) values(5,"十二","f",78)')
 
 print_table_curl('SELECT * FROM student s LEFT OUTER JOIN classes c ON s.classes_id=c.id')
 print_table_curl('SELECT * FROM student s FULL OUTER JOIN classes c ON s.classes_id=c.id')
+
+
+commit_table_curl('UPDATE student SET score=score+100')
+
+print_table_curl('SELECT * FROM student s FULL OUTER JOIN classes c ON s.classes_id=c.id')
+
+commit_table_curl('UPDATE student SET score=score+100 where id=12' )
+
+print_table_curl('SELECT * FROM student s FULL OUTER JOIN classes c ON s.classes_id=c.id')
+
+commit_table_curl('DELETE FROM student  where id=12' )
+print_table_curl('SELECT * FROM student s FULL OUTER JOIN classes c ON s.classes_id=c.id')
+
+commit_table_curl('DELETE FROM classes' )
+print_table_curl('SELECT * FROM student s FULL OUTER JOIN classes c ON s.classes_id=c.id')
+
+# commit_table_curl('REPLACE INTO student ("11","2","lishiyi","m","18")')
+commit_table_curl('REPLACE INTO student(classes_id,name,gender,score) values(5,"十二","f",78)')
+print_table_curl('SELECT * FROM student s FULL OUTER JOIN classes c ON s.classes_id=c.id')
+commit_table_curl('REPLACE INTO student values(13,5,"十二2","f",78)')
+print_table_curl('SELECT * FROM student where id >=13')
