@@ -1,0 +1,101 @@
+#minikube 命令
+minikube stop 
+minikube delete
+minikube start
+--kubernetes-version=v1.22.4 --vm-driver=none
+#containerd
+--extra-config=kubelet.max-pods=220   --kubernetes-version=v1.25.3   --cni=bridge   --container-runtime=containerd   --memory=39000   --cpus=6
+#host
+--mount   --mount-string "/local/scratch:/hosthome"
+
+#delete docker image
+docker system prune -af
+
+
+#create xxx namespace
+kubelet create namespace xxx
+#设置xxx namespace为默认namespace
+kubectl config set-context --current --namespace=xxx
+
+#解密/加密
+echo xxx|base64 -d
+echo xxx|base64 
+
+#k8s 命令
+kubectl get pods#查看所有pod
+kubectl get svc#查看所有svc
+kubectl logs -f $pod-name#查看pod的log
+kubectl edit deploy $svc-name#edit svc的deploy
+kubectl describe pods $pod-name #查看pod的详细安装信息
+
+kubectl get cm#查看所有cm
+kubectl edit cm $cm-name  #配置cm
+
+tar -czf xxx.tgz yyy  #将yyy文件夹压缩到xxx.tgz
+tar -zxvf  xxx.tgz  #解压
+
+#tcpdump
+With containerd, wireshark docker0 can not be used, you should use the way as below to start tcpdump in minikube:
+Step1: download sniff from https://github.com/eldadru/ksniff
+Step2:install sniff
+unzip sniff.zip
+make install
+Step3:
+minikube  cp  ksniff/static-tcpdump /home/docker/static-tcpdump
+minikube ssh
+sudo chmod +x static-tcpdumpsudo ./static-tcpdump -i any -s 65535 -w test.pcap
+sudo scp test.pcap ejioguo@100.76.108.56:/home/ejioguo/
+
+Docker cp
+
+$ docker ps
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED      STATUS      PORTS                                                                                                                                  NAMES
+7688ce031bb3   gcr.io/k8s-minikube/kicbase:v0.0.37   "/usr/local/bin/entr…"   6 days ago   Up 6 days   127.0.0.1:49312->22/tcp, 127.0.0.1:49311->2376/tcp, 127.0.0.1:49310->5000/tcp, 127.0.0.1:49309->8443/tcp, 127.0.0.1:49308->32443/tcp   epc
+$ docker cp 7688ce031bb3:/home/docker/static-tcpdump ./
+
+
+#curl
+curl -X GET http://192.111.1.2:555/cxxx/ssh
+curl -X DELETE http://192.111.1.2:555/cxxx/ssh
+curl -X PATCH -H "Content-Type: application/json" http://192.168.240.6:500/asss -d '[{"op": "replace", "path": "a/b", "value": "a"}]'
+
+#export env
+export aaa=bbb
+
+#画图
+http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000
+
+#git 配置email
+git config user.email 163@163.com
+git commit --amend --no-edit --reset-author
+
+命令：%s/\s\+$//g
+可以删除行尾多余的空格和tab符号。
+命令：%s/ *$//g
+/和*中间有空格，只能删除行尾空格，对于tab不能删除
+
+#软连接
+ln -s ../../init.py ../init.py
+
+#docker cp
+docker ps| grep aa
+893eac40b2de
+docker cp <aa-containerId>:<SRC_PATH> <DEST_PATH>
+docker cp c0281b5fe4b8:/me/minikube.xml /home/
+docker cp /home/aa 686c15b415eb:/opt/
+
+#wireshark 安装
+sudo apt-add-repository ppa:wireshark-dev/stable
+sudo apt-get install wireshark
+sudo groupadd  wireshark
+sudo chgrp wireshark /usr/bin/dumpcap
+sudo chmod 4755 /usr/bin/dumpcap
+
+#sublime 安装
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update
+sudo apt-get install sublime-text-installer
+
+helm install
+helm uninstall
+helm ls
